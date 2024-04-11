@@ -18,8 +18,7 @@ class MainActivity : AppCompatActivity() {
     lateinit var appCompatButton: AppCompatButton
     lateinit  var weightText : EditText
     lateinit var heightText : EditText
-    val WEIGHT_NAME : String = "weightTextName"
-    val HEIGHT_NAME : String = "heightTextName"
+
 
 
 
@@ -32,6 +31,10 @@ class MainActivity : AppCompatActivity() {
         appCompatButton = findViewById(R.id.btnCompute)
         weightText = findViewById(R.id.txtWeight)
         heightText  = findViewById(R.id.txtHeight)
+
+        /******Declaring Keys******/
+        val WEIGHT_NAME : String = "weightTextName"
+        val HEIGHT_NAME : String = "heightTextName"
 
 
         /***Create shared preference object****/
@@ -46,15 +49,18 @@ class MainActivity : AppCompatActivity() {
     appCompatButton.setOnClickListener(View.OnClickListener
     {
 
+        /******Editor******/
                 val editorWeight: SharedPreferences.Editor = sharedPreferrenceWeight.edit()
                 val editorHeight: SharedPreferences.Editor = sharedPreferrenceHeight.edit()
 
-                editorWeight.putString(WEIGHT_NAME, weightText.text.toString())
-                editorHeight.putString(HEIGHT_NAME, heightText.text.toString())
+                editorWeight.putFloat(WEIGHT_NAME, weightText.text.toString().toFloat())
+                editorHeight.putFloat(HEIGHT_NAME, heightText.text.toString().toFloat())
 
                 // Apply changes to SharedPreferences
                 editorWeight.apply()
                 editorHeight.apply()
+                editorWeight.commit()
+                editorHeight.commit()
             // Start BMI_Display activity
             val bmiDisplayActivity = Intent(this, BMI_Display::class.java)
             startActivity(bmiDisplayActivity)

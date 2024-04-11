@@ -20,23 +20,16 @@ class BMI_Display : AppCompatActivity() {
         val HEIGHT_NAME = "heightTextName"
 
         /******Get Shared Preference******/
-        var weightpreference : SharedPreferences = getSharedPreferences(WEIGHT_NAME, MODE_PRIVATE)
-        var heightpreference : SharedPreferences = getSharedPreferences(HEIGHT_NAME, MODE_PRIVATE)
+        val weightpreference : SharedPreferences = getSharedPreferences(WEIGHT_NAME, MODE_PRIVATE)
+        val heightpreference : SharedPreferences = getSharedPreferences(HEIGHT_NAME, MODE_PRIVATE)
 
 
         /******Calculate BMI******/
         //Formula: BMI = weight(lbs) / height(inches)^2
-        var weightString = weightpreference.getString("WEIGHT_NAME", "")
-        var heightString = heightpreference.getString("HEIGHT_NAME", "")
-
-        bmiValueText.text = weightString
-
-        //val weight : Double = weightString?.toDouble() ?: 0.0
-        //val height : Double = heightString?.toDouble() ?:0.0
-
-        //var bmi = weight / height * height
-//
-        //bmiValueText.text = bmi.toString()
+        val weight = weightpreference.getFloat(WEIGHT_NAME, 0.0F)
+        val height = heightpreference.getFloat(HEIGHT_NAME, 0.0F)
+        val bmi = weight / height * height
+        bmiValueText.text = bmi.toString()
 
 
 
