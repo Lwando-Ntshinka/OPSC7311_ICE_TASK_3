@@ -1,12 +1,9 @@
 package za.thirdyear.bmicalculator
 
-import android.content.Context
 import android.content.SharedPreferences
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.preference.PreferenceManager
 import android.widget.TextView
-import java.util.prefs.Preferences
+import androidx.appcompat.app.AppCompatActivity
 
 class BMI_Display : AppCompatActivity() {
     private lateinit var bmiValueText : TextView
@@ -28,8 +25,9 @@ class BMI_Display : AppCompatActivity() {
         //Formula: BMI = weight(lbs) / height(inches)^2
         val weight = weightpreference.getFloat(WEIGHT_NAME, 0.0F)
         val height = heightpreference.getFloat(HEIGHT_NAME, 0.0F)
-        val bmi = weight / height * height
-        bmiValueText.text = bmi.toString()
+        bmiValueText.text = height.toString()
+        val bmi = ((weight / (height * height)) * 703)
+        bmiValueText.text = String.format("%.1f", bmi)
 
 
 

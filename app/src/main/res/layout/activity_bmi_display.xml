@@ -4,20 +4,22 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/light_brown"
+    android:icon="@drawable/bmi_icon"
     tools:context=".BMI_Display">
 
     <TextView
         android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="128dp"
+        android:layout_marginStart="92dp"
         android:layout_marginTop="48dp"
         android:text="@string/bmi_calculator"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
+        android:textColor="@color/dark_grey"
         android:textSize="30sp"
         android:textStyle="bold"
-        />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/textView2"
@@ -28,26 +30,28 @@
         android:text="@string/your_body_mas_index_is"
         android:textAppearance="@color/material_on_background_emphasis_medium"
         android:textSize="25dp"
+        android:textColor="@color/dark_grey"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/txtBMI"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="200dp"
-        android:layout_marginEnd="72dp"
+        android:layout_width="92dp"
+        android:layout_height="32dp"
+        android:layout_marginTop="188dp"
+        android:layout_marginEnd="16dp"
         android:text="0"
+        android:textSize="25sp"
+        android:textColor="@color/dark_grey"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        android:textSize="25sp"/>
+        app:layout_constraintTop_toTopOf="parent" />
 
     <ImageView
         android:id="@+id/imageView"
         android:layout_width="388dp"
         android:layout_height="330dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="472dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="400dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/strawberries" />

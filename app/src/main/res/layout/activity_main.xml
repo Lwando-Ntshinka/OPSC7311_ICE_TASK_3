@@ -4,6 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/light_brown"
+    android:icon="@drawable/bmi_icon"
     tools:context=".MainActivity">
 
     <androidx.appcompat.widget.AppCompatButton
@@ -32,6 +34,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         android:textSize="30sp"
+        android:textColor="@color/dark_grey"
         android:textStyle="bold"/>
 
     <com.google.android.material.textfield.TextInputLayout
